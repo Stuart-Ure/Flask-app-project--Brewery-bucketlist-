@@ -2,6 +2,8 @@ from db.run_sql import run_sql
 from models.city import City
 from models.brewery import Brewery
 
+import repositories.brewery_repository as brewery_repo
+
 def save(city):
     sql = "INSERT INTO cities (name) VALUES ( %s) RETURNING id"
     values = [city.name,]
@@ -22,7 +24,7 @@ def select_all():
 
 def select_by_id(id):
     city= None
-    sql = "SELECT * FROM locations WHERE id = %s"
+    sql = "SELECT * FROM cities WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 

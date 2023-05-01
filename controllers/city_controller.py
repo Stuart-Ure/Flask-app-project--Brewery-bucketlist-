@@ -11,8 +11,8 @@ def cities():
     cities = city_repo.select_all() # NEW
     return render_template("cities/cities.jinja", cities = City)
 
-# @cities_blueprint.route("/cities/<id>")
-# def show(id):
-#     cities = city_repo.select(id)
+@cities_blueprint.route("/cities/<id>")
+def show(id):
+    cities = city_repo.select(id)
 
     

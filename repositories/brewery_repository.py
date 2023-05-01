@@ -15,7 +15,6 @@ def save(brewery):
 def select_all():
     breweries= []
 
-
     sql = "SELECT * FROM breweries"
     results = run_sql(sql)
 
@@ -24,14 +23,6 @@ def select_all():
         brewery= Brewery(row['name'], city, row['id'])
         breweries.append(brewery)
     return brewery
-
-
-    # sql = "SELECT * FROM breweries"
-    # results = run_sql(sql)
-    # for row in results:
-    #     brewery= Brewery(row['name'], row['id'])
-    #     breweries.append(brewery)
-    # return breweries
 
 
 def select(id):
