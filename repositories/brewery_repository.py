@@ -4,11 +4,9 @@ from models.brewery import Brewery
 import repositories.city_repository as city_repo
 
 
-
-
 def save(brewery):
-    sql = "INSERT INTO breweries ( name, city_id ) VALUES ( %s, %s) RETURNING id"
-    values = [brewery.name, brewery.city.id]
+    sql = "INSERT INTO breweries ( name, city_id, visited) VALUES ( %s, %s, %s) RETURNING id"
+    values = [brewery.name, brewery.city.id, brewery.visited]
     results = run_sql( sql, values )
     brewery.id = results[0]['id']
     return brewery
@@ -43,10 +41,10 @@ def select(id):
     result = run_sql(sql, values)
     
     if result is not None:
-        city=city_repo.select_by_id (result['city_id'])
+        city=city_repo.select_by_id(result['city_id'])
         brewery= Brewery(result['name'], city, result['id'])
     return brewery
 
 def delete_all():
     sql = "DELETE FROM breweries"
-    run_sql
+    run_sql(sql)

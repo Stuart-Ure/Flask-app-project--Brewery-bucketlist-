@@ -10,6 +10,6 @@ CREATE TABLE cities (
 CREATE TABLE breweries (
     id SERIAL PRIMARY KEY,
     name VARCHAR (255),
-    city_id INTEGER,
+    city_id INT REFERENCES cities,
     visited BOOLEAN NOT NULL DEFAULT FALSE
 );

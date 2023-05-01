@@ -3,7 +3,7 @@ from models.city import City
 from models.brewery import Brewery
 
 def save(city):
-    sql = "INSERT INTO city(name) VALUES ( %s) RETURNING id"
+    sql = "INSERT INTO cities (name) VALUES ( %s) RETURNING id"
     values = [city.name,]
     results = run_sql( sql, values )
     city.id = results[0]['id']
@@ -20,7 +20,7 @@ def select_all():
         cities.append(city)
     return cities
 
-def select(id):
+def select_by_id(id):
     city= None
     sql = "SELECT * FROM locations WHERE id = %s"
     values = [id]

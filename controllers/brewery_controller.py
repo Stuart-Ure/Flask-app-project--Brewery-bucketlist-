@@ -5,12 +5,12 @@ import repositories.brewery_repository as brewery_repo
 
 brewery_blueprint = Blueprint("brewery", __name__)
 
-brewery_blueprint.route("/brewery")
+@brewery_blueprint.route("/breweries")
 def locations():
-    locations = brewery_repo.select_all() 
-    return render_template("brewery/index.jinja", brewery = Brewery)
+    brewery = brewery_repo.select_all() 
+    return render_template("breweries/brewery.jinja", brewery = brewery)
 
-@brewery_blueprint.route("/brewery/<id>")
+@brewery_blueprint.route("/breweries/<id>")
 def show(id):
     brewery = brewery_repo.select(id)
-    return render_template("brewery/show.", brewery = Brewery)
+    return render_template("breweries/brewery.jinja", brewery = brewery)

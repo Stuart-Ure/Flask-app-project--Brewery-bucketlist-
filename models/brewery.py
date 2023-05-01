@@ -1,7 +1,10 @@
 class Brewery:
 
-    def __init__(self, name, city_id, id = None,):
+    def __init__(self, name, city, visited, id = None):
         self.name = name
+        self.city = city
+        self.visited = visited
         self.id = id
-        self.city_id = city_id 
+
+        # put visited = false into the class?
 
