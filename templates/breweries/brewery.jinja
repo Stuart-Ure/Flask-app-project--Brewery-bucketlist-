@@ -1,13 +1,13 @@
 {% extends 'base.jinja'%}
 
 {% block content %}
-<h1>Brewery List</h1>
+<h2> <b> <u> <em></em>Brewery List </em> </u> </b> </h2>
 
+<div class="brewery"></div>
 {%for brewery in brewery%}
 
-{{ brewery.name }}
+<h4>{{ brewery.name }}</h4>
 
 {%endfor%}
 
-<p>Breweries to visit</p>
 {% endblock %}

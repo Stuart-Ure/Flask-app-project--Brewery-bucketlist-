@@ -1,13 +1,13 @@
 {% extends 'base.jinja'%}
 
 {% block content %}
-<h1>City List</h1>
+<h2> <b> <u> <em></em>City List </em> </u> </b> </h2>
 
-{%for city in cities%}
+    <div class="city"></div>
+    {%for city in cities%}
 
-{{ city.name}}
+    <h4>{{ city.name}} </h4> 
 
-{%endfor%}
+    {%endfor%}
 
-
-{% endblock %}
+    {% endblock %}
