@@ -3,5 +3,11 @@
 {% block content %}
 <h1>Brewery List</h1>
 
+{%for brewery in brewery%}
+
+{{ brewery.name }}
+
+{%endfor%}
+
 <p>Breweries to visit</p>
 {% endblock %}

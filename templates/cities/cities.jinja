@@ -3,5 +3,11 @@
 {% block content %}
 <h1>City List</h1>
 
-<p>What cities to visit</p>
+{%for city in cities%}
+
+{{ city.name}}
+
+{%endfor%}
+
+
 {% endblock %}

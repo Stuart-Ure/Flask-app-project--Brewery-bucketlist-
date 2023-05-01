@@ -22,7 +22,7 @@ def select_all():
         city = city_repo.select_by_id(row['city_id'])
         brewery= Brewery(row['name'], city, row['id'])
         breweries.append(brewery)
-    return brewery
+    return breweries
 
 
 def select(id):

@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Brewery List</title>
 
-    {# <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        crossorigin="anonymous"> <!-- NEW --> #}
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- NEW -->
 
 </head>
@@ -17,7 +16,8 @@
     <header>
         <nav>
             <ul class="menu">
-                <li><a href="/cities">Home</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cities">Cities</a></li>
                 <li><a href="/breweries">Brewery</a></li>
             </ul>
         </nav>

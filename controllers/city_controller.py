@@ -9,7 +9,7 @@ cities_blueprint = Blueprint("cities", __name__)
 @cities_blueprint.route("/cities")
 def cities():
     cities = city_repo.select_all() # NEW
-    return render_template("cities/cities.jinja", cities = City)
+    return render_template("cities/cities.jinja", cities = cities)
 
 @cities_blueprint.route("/cities/<id>")
 def show(id):
