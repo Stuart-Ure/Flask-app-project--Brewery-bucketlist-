@@ -30,16 +30,18 @@
 <h2> <b> <u> <em></em>Brewery List </em> </u> </b> </h2>
 
 <div class="brewery"></div>
-{%for brewery in brewery%}
+{%for brewery in breweries%}
 <h4>{{ brewery.name }}</h4>
 <p>Location: {{ brewery.city.name }}</p>
+{# <p> temp - {{brewery.id}}</p> #}
 {% if brewery.visited is true%}
 <p>You have visited this brewery</p>
 {% else %}
 <p>You have not visited this brewery</p>
 {% endif %}
-<form action="/breweries/delete/{{brewery.id}}" method="post">
+<form action="/breweries/{{brewery.id}}/delete" method="post">
     <input type="submit" value="Delete Brewery" />
+</form>
 
     {%endfor%}
 

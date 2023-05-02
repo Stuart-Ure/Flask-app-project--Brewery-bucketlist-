@@ -9,18 +9,19 @@ brewery_blueprint = Blueprint("brewery", __name__)
 
 @brewery_blueprint.route("/breweries")
 def breweries():
-    brewery = brewery_repo.select_all() 
+    breweries = brewery_repo.select_all() 
     cities = city_repo.select_all()
-    return render_template("breweries/brewery.jinja", brewery = brewery, cities=cities)
+    return render_template("breweries/brewery.jinja", breweries = breweries, cities=cities)
 
 
 @brewery_blueprint.route("/breweries/<id>")
 def show(id):
-    brewery = brewery_repo.select(id)
-    return render_template("breweries/brewery.jinja", brewery = brewery)
+    breweries = brewery_repo.select(id)
+    return render_template("breweries/brewery.jinja", breweries = breweries)
 
-@brewery_blueprint.route('/breweries/delete/<id>', methods=['POST'])
+@brewery_blueprint.route('/breweries/<id>/delete', methods=['POST'])
 def delete_brewery(id):
+    print(id)
     brewery_repo.delete_by_id(id)
     return redirect('/breweries')
 

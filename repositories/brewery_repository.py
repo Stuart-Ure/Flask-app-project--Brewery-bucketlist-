@@ -20,7 +20,7 @@ def select_all():
 
     for row in results:
         city = city_repo.select_by_id(row['city_id'])
-        brewery= Brewery(row['name'], city, row['id'])
+        brewery= Brewery(row['name'], city, row['visited'], row['id'])
         breweries.append(brewery)
     return breweries
 
@@ -41,6 +41,6 @@ def delete_all():
     run_sql(sql)
 
 def delete_by_id(id):
-    sql = "DELETE  FROM breweries WHERE id = %s"
+    sql = "DELETE FROM breweries WHERE id = %s"
     values = [id]
     run_sql(sql, values)

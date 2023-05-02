@@ -1,5 +1,5 @@
-DROP TABLE cities;
 DROP TABLE breweries;
+DROP TABLE cities;
 
 
 CREATE TABLE cities (
@@ -10,6 +10,6 @@ CREATE TABLE cities (
 CREATE TABLE breweries (
     id SERIAL PRIMARY KEY,
     name VARCHAR (255),
-    city_id INT REFERENCES cities,
+    city_id INT REFERENCES cities ON DELETE CASCADE, 
     visited BOOLEAN NOT NULL DEFAULT FALSE
 );

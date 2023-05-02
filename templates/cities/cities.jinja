@@ -18,7 +18,8 @@
 
 <h4>{{ city.name}} </h4>
 <form action="/cities/delete/{{city.id}}" method="post">
-    <input type="submit" value="Delete City" /> 
+    <input type="submit" value="Delete City"/> 
+    </form>
     {%endfor%}
 
     {% endblock %}
