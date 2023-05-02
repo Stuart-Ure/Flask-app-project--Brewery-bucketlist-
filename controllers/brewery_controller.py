@@ -41,3 +41,27 @@ def add_brewery():
     # save the city using city repository
     brewery_repo.save(brewery)
     return redirect('/breweries')
+
+# ..........THE BELOW IS TO EDIT AND UPDAT BUT THE BUTTON URL IS STATING IT IS INCORRECT
+
+# @brewery_blueprint.route('/breweries/')
+# def edit(id):
+#     brewery = brewery_repo.select_by_id(id)
+#     cities = city_repo.select_all()
+#     return render_template("breweries/brewery.jinja", brewery=brewery, cities=cities)
+
+# @brewery_blueprint.route('/breweries/', methods=['POST'])
+# def update(id):
+#     name = request.form['name']
+#     city_id = request.form["city"]
+#     visited = request.form["visited"]
+#     city = city_repo.select_by_id(city_id)
+#     brewery= Brewery (name,city,visited)
+
+# ......THE BELOW IS TO  SHOW ALL BREWERIES BY CITY ON A NEW PAGE
+
+# @brewery_blueprint.route('/cities/<id>/brewery')
+# def show_brewery_by_city(id):
+#     cities = city_repo.select(id)
+#     brewery_by_city = brewery_repo.breweries_for_city(cities)
+#     return render_template('show.jinja', all_breweries = brewery_by_city)

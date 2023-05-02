@@ -8,21 +8,21 @@
     </div>
 
     <div>
-    {# <label for="name">Name:</label> #}
+        {# <label for="name">Name:</label> #}
         {# <input type="text" id="City" name="city" placeholder="City" required autofocus> #}
         <select name="city">
-            {% for city in cities  %}
-                <option value="{{city.id}}">{{city.name}}</option>
+            {% for city in cities %}
+            <option value="{{city.id}}">{{city.name}}</option>
             {% endfor %}
         </select>
     </div>
 
     <div>
         {# <input type="datalist" id="visited" name="visited" placeholder="Visited" required> #}
-        <select name = "visited" > 
-        <option value = True> Yes </option> 
-        <option value = False> No </option>
-        </select>  
+        <select name="visited">
+            <option value=True> Yes </option>
+            <option value=False> No </option>
+        </select>
     </div>
 
     <button type="submit">Add Brewery</button>
@@ -42,7 +42,20 @@
 <form action="/breweries/{{brewery.id}}/delete" method="post">
     <input type="submit" value="Delete Brewery" />
 </form>
+<form action="/breweries/{{ brewery.id }}/update" method="post">
+<div> 
+    <input type="hidden" name="brewery_id" value="{{ brewery.id }}">
+    {% if brewery.visited %}
+    <input type="hidden" name="visited" value="0">
+    <input type="submit" value="Mark as not visited">
+    {% else %}
+    <input type="hidden" name="visited" value="1">
+    <input type="submit" value="Mark as visited">
+    {% endif %}
+</form>
+</div>
 
-    {%endfor%}
+{%endfor%}
 
-    {% endblock %}
+{% endblock %}
+

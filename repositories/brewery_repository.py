@@ -44,3 +44,28 @@ def delete_by_id(id):
     sql = "DELETE FROM breweries WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+# THE BELOW IS THE UPDATE THAT I CANT GET TO WORK
+# def update(brewery):
+#     sql = "UPDATE breweries SET (name, city_id, visited, VALUES) = (%s, %s, %s) WHERE id = %s"
+#     values = [brewery.name, brewery.city.id, brewery.visited]
+#     results = run_sql( sql, values )
+#     brewery.id = results[0]['id']
+#     return brewery
+
+
+
+
+# ......THE BELOW IS TO  SHOW ALL BREWERIES BY CITY ON A NEW PAGE
+
+# def brewery_by_city(city):
+#     brewery = []
+
+#     sql = "SELECT * FROM brewery WHERE city_id = %s"
+#     values = [city.id]
+#     results = run_sql(sql, values)
+
+#     for row in results:
+#         brewery = Brewery (row ['name'], row['city'], row['visited'], row['id'] )
+#         brewery.append(brewery)
+#     return brewery
