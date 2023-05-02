@@ -15,4 +15,7 @@ def cities():
 def show(id):
     cities = city_repo.select(id)
 
-    
+@cities_blueprint.route('/cities/delete/<id>', methods=['POST'])
+def delete_city(id):
+    city_repo.delete_by_id(int(id))
+    return redirect('/cities')

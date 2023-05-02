@@ -5,8 +5,13 @@
 
 <div class="brewery"></div>
 {%for brewery in brewery%}
-
 <h4>{{ brewery.name }}</h4>
+<p>Location: {{ brewery.city.name }}</p>
+{% if brewery.visited is true%}
+<p>You have visited this brewery</p>
+{% else %}
+<p>You have not visited this brewery</p>
+{% endif %}
 
 {%endfor%}
 

@@ -3,11 +3,12 @@
 {% block content %}
 <h2> <b> <u> <em></em>City List </em> </u> </b> </h2>
 
-    <div class="city"></div>
-    {%for city in cities%}
+<div class="city"></div>
+{%for city in cities%}
 
-    <h4>{{ city.name}} </h4> 
-
+<h4>{{ city.name}} </h4>
+<form action="/cities/delete/{{city.id}}" method="post">
+    <input type="submit" value="Delete City" />
     {%endfor%}
 
     {% endblock %}

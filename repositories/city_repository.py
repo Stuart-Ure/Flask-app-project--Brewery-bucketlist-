@@ -35,3 +35,4 @@ def select_by_id(id):
 def delete_all():
     sql = "DELETE FROM cities"
     run_sql(sql) 
+
