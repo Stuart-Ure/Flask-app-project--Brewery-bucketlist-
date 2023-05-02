@@ -15,3 +15,8 @@ def breweries():
 def show(id):
     brewery = brewery_repo.select(id)
     return render_template("breweries/brewery.jinja", brewery = brewery)
+
+@brewery_blueprint.route('/breweries/delete/<id>', methods=['POST'])
+def delete_city(id):
+    brewery_repo.delete_by_id(int(id))
+    return redirect('/breweries')

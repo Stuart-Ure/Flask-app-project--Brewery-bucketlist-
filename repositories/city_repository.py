@@ -36,3 +36,13 @@ def delete_all():
     sql = "DELETE FROM cities"
     run_sql(sql) 
 
+def delete_by_id(id):
+    sql = "DELETE  FROM cities WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+# def add_by_name(city):
+#     sql = "INSERT INTO cities (name) VALUES ( %s) RETURNING id"
+#     values = [city.name]
+#     results = run_sql( sql, values )
+#     return city

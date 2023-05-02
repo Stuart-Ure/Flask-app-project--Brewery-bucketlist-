@@ -12,6 +12,8 @@
 {% else %}
 <p>You have not visited this brewery</p>
 {% endif %}
+<form action="/breweries/delete/{{brewery.id}}" method="post">
+    <input type="submit" value="Delete Brewery" />
 
 {%endfor%}
 

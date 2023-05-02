@@ -3,6 +3,18 @@
 {% block content %}
 <h2> <b> <u> <em></em>City List </em> </u> </b> </h2>
 
+</select>
+<div>
+
+
+    {# <form action="/cities/delete/{{city.id}}" method="post"></form>
+    <label for="cities">City:</label> #}
+    <input type="text" id="cities" name="city" placeholder="Add New City" required autofocus>
+    <button type="submit">Add City</button>
+    </select>
+</div>
+
+
 <div class="city"></div>
 {%for city in cities%}
 

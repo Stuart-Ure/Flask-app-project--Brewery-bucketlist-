@@ -39,3 +39,8 @@ def select(id):
 def delete_all():
     sql = "DELETE FROM breweries"
     run_sql(sql)
+
+def delete_by_id(id):
+    sql = "DELETE  FROM breweries WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

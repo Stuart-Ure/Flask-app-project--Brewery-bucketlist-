@@ -19,3 +19,13 @@ def show(id):
 def delete_city(id):
     city_repo.delete_by_id(int(id))
     return redirect('/cities')
+
+# @cities_blueprint.route('/cities/add/<id>', methods=['POST'])
+# def add_city(id):
+#     city_repo.add_by(int(id))
+#     return redirect('/cities')
+
+# @cities_blueprint.route("/cities/new", methods=['GET'])
+# def new_city():
+#     cities =city_repo.select_all()
+#     return render_template('cities/', all_cities = cities)
