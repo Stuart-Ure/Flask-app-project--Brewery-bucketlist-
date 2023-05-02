@@ -1,6 +1,32 @@
 {% extends 'base.jinja'%}
 
 {% block content %}
+
+<form action="/breweries" method="post">
+    <div>
+        <input type="text" id="breweries" name="name" placeholder="Add New Brewery" required autofocus>
+    </div>
+
+    <div>
+    {# <label for="name">Name:</label> #}
+        {# <input type="text" id="City" name="city" placeholder="City" required autofocus> #}
+        <select name="city">
+            {% for city in cities  %}
+                <option value="{{city.id}}">{{city.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        {# <input type="datalist" id="visited" name="visited" placeholder="Visited" required> #}
+        <select name = "visited" > 
+        <option value = True> Yes </option> 
+        <option value = False> No </option>
+        </select>  
+    </div>
+
+    <button type="submit">Add Brewery</button>
+</form>
 <h2> <b> <u> <em></em>Brewery List </em> </u> </b> </h2>
 
 <div class="brewery"></div>
@@ -15,6 +41,6 @@
 <form action="/breweries/delete/{{brewery.id}}" method="post">
     <input type="submit" value="Delete Brewery" />
 
-{%endfor%}
+    {%endfor%}
 
-{% endblock %}
+    {% endblock %}

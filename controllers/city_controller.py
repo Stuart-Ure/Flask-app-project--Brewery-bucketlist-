@@ -24,9 +24,8 @@ def delete_city(id):
 def add_city():
     # get data from form
     name= request.form["name"]
+     # make a city instance from form data
     city = City (name)
-    # make a city instance from form data
-
     # save the city using city repository
     city_repo.save(city)
     return redirect('/cities')
