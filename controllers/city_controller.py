@@ -20,10 +20,16 @@ def delete_city(id):
     city_repo.delete_by_id(int(id))
     return redirect('/cities')
 
-# @cities_blueprint.route('/cities/add/<id>', methods=['POST'])
-# def add_city(id):
-#     city_repo.add_by(int(id))
-#     return redirect('/cities')
+@cities_blueprint.route('/cities', methods=['POST'])
+def add_city():
+    # get data from form
+    name= request.form["name"]
+    city = City (name)
+    # make a city instance from form data
+
+    # save the city using city repository
+    city_repo.save(city)
+    return redirect('/cities')
 
 # @cities_blueprint.route("/cities/new", methods=['GET'])
 # def new_city():

@@ -9,8 +9,9 @@
 
     {# <form action="/cities/delete/{{city.id}}" method="post"></form>
     <label for="cities">City:</label> #}
-    <input type="text" id="cities" name="city" placeholder="Add New City" required autofocus>
+   <form action="/cities" method="post"> <input type="text" id="cities" name="name" placeholder="Add New City" required autofocus>
     <button type="submit">Add City</button>
+    </form> 
     </select>
 </div>
 
