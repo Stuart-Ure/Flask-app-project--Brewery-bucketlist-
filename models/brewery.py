@@ -6,5 +6,4 @@ class Brewery:
         self.visited = visited
         self.id = id
 
-        # put visited = false into the class?
 
