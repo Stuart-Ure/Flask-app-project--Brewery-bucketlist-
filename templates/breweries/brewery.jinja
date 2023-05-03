@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<div class="addbrewery"> 
 <form action="/breweries" method="post">
     <div>
         <input type="text" id="breweries" name="name" placeholder="Add New Brewery" required autofocus>
@@ -27,7 +28,9 @@
 
     <button type="submit">Add Brewery</button>
 </form>
-<h2> <b> <u> <em></em>Brewery List </em> </u> </b> </h2>
+
+</div>
+<div class="brewerylist"><h2> <b> <u> <em></em>Brewery List </em> </u> </b> </h2> </div>
 
 <div class="brewery"></div>
 {%for brewery in breweries%}
@@ -39,11 +42,10 @@
 {% else %}
 <p>You have not visited this brewery</p>
 {% endif %}
-
+<img src="/static/images/moonwake.jpg" alt="moonwake" class = "moonwake">
 <form action="/breweries/{{brewery.id}}/delete" method="post">
     <input type="submit" value="Delete Brewery" />
 </form>
-
 <form action="/breweries/{{ brewery.id }}" method="post">
 <div> 
     <input type="hidden" name="brewery_id" value="{{ brewery.id }}">
