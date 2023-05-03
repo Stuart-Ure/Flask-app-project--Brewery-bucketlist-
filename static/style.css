@@ -1,7 +1,7 @@
 General styles
 body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-    margin: ;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin:0;
     padding: 0;
   }
   
@@ -99,10 +99,13 @@ body {
     padding-bottom: 0px;
   }
 
+
   .brewerylist {
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
     margin-top: 40px;
+    text-align: center;
+    
   }
   .addbrewery {
     padding-top: 20px;
@@ -110,30 +113,33 @@ body {
   }
 
 
-/* 
+
   .brewery {
     width: 30%;
     margin-bottom: 20px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    /* box-shadow: 2px 2px 5px #ccc; */
+    font-size: 1.3rem;
+
 }
 
   .brewery {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px; */
-   */
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
   
   .brewery h4 {
-    font-size: 1.2rem;
-    margin: 0 0 10px;
+    font-size: 20px;
+    margin :10px;
   }
   
   .brewery p {
-    font-size: 1rem;
+    font-size: rem;
     margin: 0;
   }
   
@@ -157,10 +163,12 @@ body {
     background-color: #d32f2f;
   }
   
+  .visited {
+    font-size: 50px;
+  }
 
   .moonwake {
-    width: 40%;
-    border: 1px solid black;
-    height: 20%;
+    width: 50%;
+    height: 40%;
 
   }

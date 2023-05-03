@@ -11,6 +11,7 @@
     <div>
         {# <label for="name">Name:</label> #}
         {# <input type="text" id="City" name="city" placeholder="City" required autofocus> #}
+
         <select name="city">
             {% for city in cities %}
             <option value="{{city.id}}">{{city.name}}</option>
@@ -38,11 +39,11 @@
 <p>Location: {{ brewery.city.name }}</p>
 {# <p> temp - {{brewery.id}}</p> #}
 {% if brewery.visited is true%}
-<p>You have visited this brewery</p>
+<div class="visited"><p>You have visited this brewery</p> </div>
 {% else %}
 <p>You have not visited this brewery</p>
 {% endif %}
-<img src="/static/images/moonwake.jpg" alt="moonwake" class = "moonwake">
+<img src="/static/images/moonwake.jpg" alt="moonwake" class = "moonwake"> 
 <form action="/breweries/{{brewery.id}}/delete" method="post">
     <input type="submit" value="Delete Brewery" />
 </form>
