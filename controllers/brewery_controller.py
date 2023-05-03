@@ -42,7 +42,7 @@ def add_brewery():
     brewery_repo.save(brewery)
     return redirect('/breweries')
 
-# ..........THE BELOW IS TO EDIT AND UPDAT BUT THE BUTTON URL IS STATING IT IS INCORRECT
+
 
 @brewery_blueprint.route('/breweries/')
 def edit(id):
