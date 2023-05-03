@@ -32,8 +32,8 @@ def select(id):
     result = run_sql(sql, values)
     
     if result is not None:
-        city=city_repo.select_by_id(result['city_id'])
-        brewery= Brewery(result['name'], city, result['id'])
+        city=city_repo.select_by_id(result[0]['city_id'])
+        brewery= Brewery(result[0]['name'], city, result[0]['visited'], id)
     return brewery
 
 def delete_all():
@@ -46,12 +46,11 @@ def delete_by_id(id):
     run_sql(sql, values)
 
 # THE BELOW IS THE UPDATE THAT I CANT GET TO WORK
-# def update(brewery):
-#     sql = "UPDATE breweries SET (name, city_id, visited, VALUES) = (%s, %s, %s) WHERE id = %s"
-#     values = [brewery.name, brewery.city.id, brewery.visited]
-#     results = run_sql( sql, values )
-#     brewery.id = results[0]['id']
-#     return brewery
+
+def update(brewery):
+    sql = "UPDATE breweries SET (name, city_id, visited) = (%s, %s, %s) WHERE id = %s"
+    values = [brewery.name, brewery.city.id, brewery.visited, brewery.id]
+    run_sql( sql, values )
 
 
 

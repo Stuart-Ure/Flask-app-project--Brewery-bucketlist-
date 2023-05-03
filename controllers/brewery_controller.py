@@ -44,19 +44,22 @@ def add_brewery():
 
 # ..........THE BELOW IS TO EDIT AND UPDAT BUT THE BUTTON URL IS STATING IT IS INCORRECT
 
-# @brewery_blueprint.route('/breweries/')
-# def edit(id):
-#     brewery = brewery_repo.select_by_id(id)
-#     cities = city_repo.select_all()
-#     return render_template("breweries/brewery.jinja", brewery=brewery, cities=cities)
+@brewery_blueprint.route('/breweries/')
+def edit(id):
+    brewery = brewery_repo.select_by_id(id)
+    cities = city_repo.select_all()
+    return render_template("breweries/brewery.jinja", brewery=brewery, cities=cities)
 
-# @brewery_blueprint.route('/breweries/', methods=['POST'])
-# def update(id):
-#     name = request.form['name']
-#     city_id = request.form["city"]
-#     visited = request.form["visited"]
-#     city = city_repo.select_by_id(city_id)
-#     brewery= Brewery (name,city,visited)
+@brewery_blueprint.route('/breweries/<id>', methods=['POST'])
+def update(id):
+    brewery = brewery_repo.select(id)
+    if request.form["visited"] == "True":
+        brewery.visited = True
+    else:
+        brewery.visited = False
+    print(brewery.__dict__)
+    brewery_repo.update(brewery)
+    return redirect('/breweries')
 
 # ......THE BELOW IS TO  SHOW ALL BREWERIES BY CITY ON A NEW PAGE
 

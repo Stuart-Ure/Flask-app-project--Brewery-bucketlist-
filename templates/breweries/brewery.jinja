@@ -39,17 +39,19 @@
 {% else %}
 <p>You have not visited this brewery</p>
 {% endif %}
+
 <form action="/breweries/{{brewery.id}}/delete" method="post">
     <input type="submit" value="Delete Brewery" />
 </form>
-<form action="/breweries/{{ brewery.id }}/update" method="post">
+
+<form action="/breweries/{{ brewery.id }}" method="post">
 <div> 
     <input type="hidden" name="brewery_id" value="{{ brewery.id }}">
     {% if brewery.visited %}
-    <input type="hidden" name="visited" value="0">
+    <input type="hidden" name="visited" value="False">
     <input type="submit" value="Mark as not visited">
     {% else %}
-    <input type="hidden" name="visited" value="1">
+    <input type="hidden" name="visited" value="True">
     <input type="submit" value="Mark as visited">
     {% endif %}
 </form>
